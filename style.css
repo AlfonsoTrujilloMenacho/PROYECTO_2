@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+:root {
+  /* COLORES */
+  --rtc-color-white: white;
+  --rtc-color-black: black;
+  --rtc-color-input: #b5a99a;
+  --rtc-color-button: #ff6000;
+  --rtc-color-Price: #bf0819;
+  --rtc-color-headerAnchor: #636364;
+  --rtc-color-name: #465a6d;
+  --rtc-color-seller: #333333;
+  --rtc-color-stars: #ffa927;
+  --rtc-color-reviews: #a7bac5;
+  --rtc-color-bgFilters: #c8deeb;
+  --rtc-color-border: #cccccc;
+  --rtc-color-BG: #001f3f;
+  /* SPACING */
+
+  /** MARGIN  */
+  --rtc-margin-xxs: 5px;
+  --rtc-margin-xs: 10px;
+  --rtc-margin-s: 20px;
+  --rtc-margin-m: 30px;
+  --rtc-margin-l: 40px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-xxl: 60px;
+
+  /** PADDING  */
+  --rtc-padding-xxs: 5px;
+  --rtc-padding-xs: 10px;
+  --rtc-padding-s: 20px;
+  --rtc-padding-m: 30px;
+  --rtc-padding-l: 40px;
+  --rtc-padding-xl: 50px;
+  --rtc-padding-xxl: 60px;
+
+  /** GAP */
+  --rtc-gap-xxs: 5px;
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+  --rtc-gap-xxl: 60px;
+
+  /* BORDER */
+  --rtc-border-s: 1px solid;
+  --rtc-border-m: 2px solid;
+  --rtc-border-l: 3px solid;
+
+  /* BORDER-RADIUS */
+  --rtc--border-radius-s: 10px;
+  --rtc--border-radius-m: 20px;
+  --rtc--border-radius-l: 30px;
+}
