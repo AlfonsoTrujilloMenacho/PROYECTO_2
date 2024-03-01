@@ -201,8 +201,8 @@ const showProductsByPrice = (priceInput) => {
   });
   showProducts(filteredProductsByPrice);
 };
-// };
 filterByPrice();
+
 // //? SELLER FILTER
 // const sellerFilter = document.createElement('div');
 // sellerFilter.classList.add('seller-filter');
