@@ -1,5 +1,3 @@
-// import './style.css';
-
 const products = [
   {
     image:
@@ -135,7 +133,7 @@ const showProducts = (products) => {
     capacity.textContent = `Capacity: ${product.capacity}`;
 
     const seller = document.createElement('h4');
-    seller.textContent = `Vendido por: ${product.seller}`;
+    seller.textContent = `Sold by: ${product.seller}`;
 
     productCard.appendChild(image);
     productCard.appendChild(name);
@@ -149,7 +147,6 @@ const showProducts = (products) => {
     PRODUCTS.appendChild(productCard);
   }
 };
-showProducts(products);
 
 //! MENU DESPLEGABLE
 const filterButton = document.createElement('div');
@@ -158,87 +155,31 @@ const filterButtonImagen = document.createElement('img');
 filterButtonImagen.src =
   'https://static.vecteezy.com/system/resources/previews/001/198/883/original/gun-png.png';
 filterButtonImagen.alt = 'Menu hambuguesa';
-filterButton.appendChild(filterButtonImagen);
 
+const bala = document.createElement('img');
+bala.classList.add('bala');
+bala.src = 'https://cdn-icons-png.flaticon.com/512/39/39838.png';
+bala.alt = 'Bala icon';
+
+filterButton.appendChild(filterButtonImagen);
 document.body.appendChild(filterButton);
-filterButton.addEventListener('click', (e) => {
+document.body.appendChild(bala);
+filterButton.addEventListener('click', () => {
   PRODUCTS.classList.toggle('clicked');
   filters.classList.toggle('open');
+  filterButton.classList.add('fired');
+  bala.classList.add('open-bala');
+  filterButton.addEventListener(
+    'animationend',
+    () => {
+      filterButton.classList.remove('fired');
+      bala.classList.remove('open-bala');
+    },
+    { once: true }
+  );
+
+  const brand = document.getElementById('brand');
+  brand.classList.toggle('ifOpen');
 });
 
-//! SECCIÓN DE FILTROS
-const filters = document.querySelector('.filter');
-
-//? PRICE FILTER
-
-const filterByPrice = () => {
-  const priceFilter = document.createElement('div');
-  priceFilter.classList.add('price-filter');
-  const priceInput = document.createElement('input');
-  priceInput.setAttribute('type', 'number');
-  priceInput.placeholder = 'Inserta un precio...';
-  const priceButton = document.createElement('button');
-  priceButton.textContent = 'BUSCAR';
-
-  priceButton.addEventListener('click', () => showProductsByPrice(priceInput));
-  window.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      showProductsByPrice(priceInput);
-    }
-  });
-
-  priceFilter.appendChild(priceInput);
-  priceFilter.appendChild(priceButton);
-  filters.appendChild(priceFilter);
-};
-
-const showProductsByPrice = (priceInput) => {
-  const filteredProductsByPrice = [];
-  products.forEach((product) => {
-    if (product.price <= priceInput.value) {
-      filteredProductsByPrice.push(product);
-    }
-  });
-  showProducts(filteredProductsByPrice);
-};
-filterByPrice();
-
-// //? SELLER FILTER
-// const sellerFilter = document.createElement('div');
-// sellerFilter.classList.add('seller-filter');
-// const sellerLabel = document.createElement('label');
-// sellerLabel.textContent = 'Selecciona un vendedor';
-// const sellerSelect = document.createElement('select');
-
-// sellerFilter.appendChild(sellerLabel);
-// sellerFilter.appendChild(sellerSelect);
-// filters.appendChild(sellerFilter);
-
-// const filterProductsBySeller = () => {
-//   const selectedSeller = sellerSelect.value;
-//   const filteredProductsBySeller = products.filter(
-//     (product) =>
-//       product.seller.toLocaleLowerCase() === selectedSeller.toLocaleLowerCase()
-//   );
-//   showProducts(filteredProductsBySeller);
-// };
-// sellerSelect.addEventListener('change', filterButton);
-
-// const showAllProducts = () => {
-//   showProducts(products);
-// };
-
-// const showSellerOptions = () => {
-//   const Sellers = [...new Set(products.map((product) => product.seller))];
-//   Sellers.forEach((seller) => {
-//     const option = document.createElement('option');
-//     option.textContent = seller;
-//     option.value = seller.toLowerCase();
-//     sellerSelect.appendChild(option);
-//   });
-// };
-
-// showAllProducts();
-// showSellerOptions();
-
-// //? TYPE FILTER
+showProducts(products);
