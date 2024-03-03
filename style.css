@@ -97,13 +97,21 @@ header > img:last-of-type {
 
 /*? IMAGEN DEL MENU DESPLEGABLE PARA ABRIR FILTROS  */
 .filter-button {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 20px;
-  top: 20px;
+  top: 10px;
   width: 70px;
   background-color: none;
   cursor: pointer;
+  border: var(--rtc-border-m);
+  border-radius: var(--rtc--border-radius-m);
+  padding: var(--rtc-padding-xs);
+  background-color: var(--rtc-color-BGFilter);
+  transition: all 0.2s ease;
+}
+.filter-button:hover {
+  transform: scale(1.1);
 }
 
 .fired {
@@ -131,7 +139,7 @@ header > img:last-of-type {
 .bala {
   position: absolute;
   z-index: 2;
-  left: 50px;
+  left: 48px;
   top: 11px;
   width: 30px;
 }
@@ -139,10 +147,10 @@ header > img:last-of-type {
 .open-bala {
   position: absolute;
   z-index: 2;
-  left: 200px;
+  left: 88px;
   top: 11px;
   width: 30px;
-  transition: 0.7s ease;
+  transition: 0.3s ease;
 }
 
 /*? SECCION DE PRODUCTOS */
@@ -275,6 +283,10 @@ header > img:last-of-type {
   clip-path: polygon(41% 10%, 67% 14%, 88% 28%, 100% 48%, 93% 63%, 76% 78%, 58% 85%, 38% 87%, 20% 88%, 0 87%, 0 9%, 20% 9%);
 }
 
+.price-filter > input::placeholder {
+  color: var(--rtc-color-P);
+}
+
 .price-filter > button {
   width: 25%;
   font-size: 14px;
@@ -282,6 +294,11 @@ header > img:last-of-type {
   border-radius: var(--rtc--border-radius-s);
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.price-filter > button:hover {
+transform: scale(1.1);
 }
 
 .price-filter > button > img {
@@ -315,7 +332,6 @@ header > img:last-of-type {
   outline: none;
   border: 0;
 }
-
 /** TYPE FILTER */
 
 .type-filter {
@@ -355,7 +371,12 @@ header > img:last-of-type {
   padding: var(--rtc-padding-xs);
   cursor: pointer;
   outline: none;
+  transition: all 0.2s ease;
 }
+
+.clean-button:hover {
+   transform: scale(1.1);
+  }
 
 .clean-button > img {
   width: 30px;
@@ -399,6 +420,7 @@ header > img:last-of-type {
   }
 
   .ifOpen {
+    position: fixed;
     z-index: 2;
   }
   
