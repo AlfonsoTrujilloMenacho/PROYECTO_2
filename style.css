@@ -137,7 +137,7 @@ header > img:last-of-type {
 }
 
 .bala {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 48px;
   top: 11px;
@@ -145,7 +145,7 @@ header > img:last-of-type {
 }
 
 .open-bala {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 88px;
   top: 11px;
@@ -190,7 +190,7 @@ header > img:last-of-type {
   height: 120px;
   align-self: center;
   object-fit: contain;
-  filter: drop-shadow(-6px -4px 13px #000000);
+
 }
 
 .product-card > h2 {

@@ -79,6 +79,7 @@ filters.appendChild(cleanButton);
 //! APLICAMOS FILTROS
 const applyFilters = () => {
   let filteredProducts = products;
+  let noProductsFound = true;
 
   //? PRICE FILTER
   if (priceInput.value !== '') {
@@ -105,8 +106,17 @@ const applyFilters = () => {
     );
   }
 
-  //? MOSTRAMOS PRODUCTOS FILTRADOS
-  showProducts(filteredProducts);
+  //? MOSTRAMOS MENSAJE SI NO HAY PRODUCTOS
+  if (filteredProducts.length === 0) {
+    alert('¡There is no products!');
+  } else {
+    noProductsFound = false;
+  }
+
+  //? MOSTRAMOS PRODUCTOS FILTRADOS SI SE ENCONTRARON
+  if (!noProductsFound) {
+    showProducts(filteredProducts);
+  }
 };
 
 //! AÑADIMOS ESCUCHADORES DE EVENTOS
