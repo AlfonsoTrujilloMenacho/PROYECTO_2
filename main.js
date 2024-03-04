@@ -151,6 +151,7 @@ const showProducts = (products) => {
 //! MENU DESPLEGABLE
 const filterButton = document.createElement('div');
 filterButton.classList.add('filter-button');
+filterButton.setAttribute('title', 'FILTROS');
 const filterButtonImagen = document.createElement('img');
 filterButtonImagen.src =
   'https://static.vecteezy.com/system/resources/previews/001/198/883/original/gun-png.png';
